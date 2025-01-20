@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>WebGL Project - Sliders, Color Wheel, Stamp Rocket, Pine Trees</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #topRow {
+      display: flex;
+      justify-content: flex-end;  
+      margin: 4px 10px;
+    }
+    #controls {
+      margin: 10px;
+    }
+    #controls p { margin: 5px 0; }
+    label {
+      display: inline-block;
+      width: 120px;
+    }
+  </style>
+</head>
+<body onload="main()">
+
+  <!-- Canvas for WebGL -->
+  <canvas id="webgl" width="800" height="600">
+    Please use a browser that supports "canvas" and WebGL.
+  </canvas>
+
+  <!-- Right-aligned clear button -->
+  <div id="clearRow">
+    <button id="clearButton">Clear Canvas</button>
+  </div>
+
+  <!-- Drawing Options Section -->
+  <div id="controls">
+    <h3>Drawing Options:</h3>
+
+    <!-- Shape selection buttons -->
+    <button id="pointButton">Draw Point</button>
+    <button id="triangleButton">Draw Triangle</button>
+    <button id="circleButton">Draw Circle</button>
+    <button id="stampRocketButton">Stamp Mini-Rocket</button>
+
+    <!-- RGB sliders -->
+    <p>
+      <label for="redSlider">Red</label>
+      <input type="range" id="redSlider" min="0" max="1" step="0.01" value="0.5">
+    </p>
+    <p>
+      <label for="greenSlider">Green</label>
+      <input type="range" id="greenSlider" min="0" max="1" step="0.01" value="0.5">
+    </p>
+    <p>
+      <label for="blueSlider">Blue</label>
+      <input type="range" id="blueSlider" min="0" max="1" step="0.01" value="0.5">
+    </p>
+
+    <!-- Color wheel -->
+    <p>
+      <label for="colorPicker">Color Wheel</label>
+      <input type="color" id="colorPicker" value="#808080">
+    </p>
+
+    <!-- Size and circle segments -->
+    <p>
+      <label for="sizeSlider">Size</label>
+      <input type="range" id="sizeSlider" min="1" max="50" step="1" value="10">
+    </p>
+    <p>
+      <label for="segmentsSlider">Circle Segments</label>
+      <input type="range" id="segmentsSlider" min="3" max="60" step="1" value="10">
+    </p>
+
+
+  <!-- Awesomeness -->
+  <h4>Awesomeness:</h4>
+  <p>
+    For awesomeness, I added color wheel so users can directly select what colors 
+    they'd like to use, and also added a mini rocket stamp, which can be adjusted 
+    with size and color wheel as well.
+  </p>
+
+  <h3>My Reference Drawing</h3>
+   <!-- Buttons to draw stuff -->
+   <button id="drawSceneButton">Draw Reference Picture</button>
+</div>
+  <img src="asg1picture.jpg" style="max-width:300px;">
+
+
+  <!-- WebGL library scripts (adjust paths if needed) -->
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/webgl-debug.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+
+  <!-- Our shape classes -->
+  <script src="Point.js"></script>
+  <script src="Triangle.js"></script>
+  <script src="Circle.js"></script>
+
+  <!-- Main logic -->
+  <script src="asg1.js"></script>
+</body>
+</html>
